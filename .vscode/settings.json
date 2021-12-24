@@ -1,0 +1,8 @@
+{
+    "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
+    "cSpell.words": [
+        "Breijs",
+        "Cies",
+        "Ferdowsi"
+    ]
+}
