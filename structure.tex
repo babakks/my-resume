@@ -24,6 +24,11 @@
 
 \usepackage[margin=0.75in]{geometry} % Adjusts the margins
 
+\usepackage{emoji}
+
+\usepackage{float}
+\usepackage{graphicx}
+
 \usepackage{multicol} % Required for multiple columns of text
 
 \usepackage{mdwlist} % Required to fine tune lists with a inline headings and indented content
@@ -39,7 +44,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{microtype} % Slightly tweaks character and word spacings for better typography
 
-\pagestyle{empty} % Stop page numbering
+\usepackage{pagenote}
+
+%\pagestyle{} % Stop page numbering
 
 %----------------------------------------------------------------------------------------
 %	DEFINE STRUCTURAL COMMANDS
@@ -48,7 +55,7 @@
 \newenvironment{indentsection} % Defines the indentsection environment which indents text in sections titles
 {\begin{list}{}{\setlength{\leftmargin}{\newparindent}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}\setlength{\itemsep}{0pt}\setlength{\topsep}{0pt}}}{\end{list}}
 
-\newcommand*\maintitle[2]{\noindent{\LARGE \textbf{#1}}\ \ \ \emph{#2}\vspace{0.3em}} % Main title (name) with date of birth or subtitle
+\newcommand*\maintitle[3]{\noindent{\LARGE \textbf{#1}}\hspace{0.5em}\emph{#2}\hfill{#3}\vspace{0.3em}}
 
 \newcommand*\roottitle[1]{\subsection*{#1}\vspace{-0.3em}\nopagebreak[4]} % Top level sections in the template
 
@@ -74,3 +81,9 @@
 \newcommand{\nobreakvspace}[1]{\nopagebreak[4]\vspace{#1}\nopagebreak[4]} % A custom vspace command with custom before and after spacing lengths that do not break the page
 
 \newcommand{\spacedhrule}[2]{\breakvspace{#1}\hrule\nobreakvspace{#2}} % Defines a horizontal line with some vertical space before and after it
+
+\newcommand{\githubmark}{\raisebox{-0.15em}{\includegraphics[height=1em]{img/github-mark.eps}}}
+\newcommand{\skypeicon}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/skype-icon.eps}}}
+\newcommand{\devbadge}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/dev-badge.eps}}}
+
+\newcommand{\headerentrybreak}{\hspace{0.5em}}
