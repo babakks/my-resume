@@ -9,7 +9,7 @@ pretty:
 	&& latexindent -l structure.tex -w
 
 clean:
-	rm -f *.bak* *.aux *.log *.out *.ent *.fls *.fdb_latexmk *.synctex.gz
+	rm -f *.bak* *.aux *.log *.out *.ent *.fls *.fdb_latexmk *.synctex.gz *.pretty.tex
 
 build:
 	lualatex resume.tex
