@@ -28,4 +28,5 @@ jobs:
         run: make build
       - uses: actions/upload-artifact@v2
         with:
+          name: resume
           path: resume.pdf
