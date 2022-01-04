@@ -1,5 +1,5 @@
 check-pretty:
-	latexindent -l resume.tex > resume.pretty.tex \ 
+	latexindent -l resume.tex > resume.pretty.tex \
 	&& diff resume.tex resume.pretty.tex \
 	&& latexindent -l structure.tex > structure.pretty.tex \
 	&& diff structure.tex structure.pretty.tex
