@@ -10,31 +10,19 @@ jobs:
   check:
     container:
       image: texlive/texlive:latest
-      env:
-        GITHUB_WORKSPACE: /src
-      volumes:
-        - src:/src
     runs-on: self-hosted
     steps:
       - name: Check out
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
       - name: Check style
-        run: cd /src && make check-pretty
+        run: make check-pretty
   build:
     needs: [check]
     container:
       image: texlive/texlive:latest
-      env:
-        GITHUB_WORKSPACE: /src
-      volumes:
-        - src:/src
     runs-on: self-hosted
     steps:
       - name: Check out
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
       - name: Make PDF
-        run: cd /src && make build
+        run: make build
