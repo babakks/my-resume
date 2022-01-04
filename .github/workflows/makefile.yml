@@ -1,18 +1,36 @@
-name: Makefile CI
+name: Check & Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build:
-
+  check:
+    container:
+      image: texlive/texlive:latest
+      volumes:
+        - src:/src
     runs-on: self-hosted
-
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Make PDF
-      run: make build
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          path: /src
+      - name: Check style
+        run: cd /src && make check-pretty
+  build:
+    needs: [check]
+    container:
+      image: texlive/texlive:latest
+      volumes:
+        - src:/src
+    runs-on: self-hosted
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          path: /src
+      - name: Make PDF
+        run: cd /src && make build
