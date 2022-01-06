@@ -1,3 +1,6 @@
+bump-build-no:
+	echo -n $$(( 1+$$(cat version.dat || echo -n "-1") )) > version.dat
+
 check-pretty:
 	latexindent -l resume.tex > resume.pretty.tex \
 	&& diff resume.tex resume.pretty.tex \
