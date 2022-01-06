@@ -87,3 +87,20 @@
 \newcommand{\devbadge}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/dev-badge.eps}}}
 
 \newcommand{\headerentrybreak}{\hspace{0.5em}}
+
+\newcommand{\buildno}{
+    % Command implementation is taken from `mVersion` package documentation.
+    %
+    \def\versionfilename{version.dat}
+    \IfFileExists{\versionfilename}{}{
+        \newwrite\outfile
+        \immediate\openout\outfile=\versionfilename
+        \immediate\write\outfile{0}
+        \immediate\closeout\outfile
+    }
+    \newread\versionfile
+    \openin\versionfile=\versionfilename
+    \read\versionfile to \versionline
+    \closein\versionfile
+    \versionline
+}
