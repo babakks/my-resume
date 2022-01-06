@@ -2,9 +2,7 @@ name: Check & Build
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches-ignore: [main]
 
 jobs:
   check-style:
@@ -28,7 +26,6 @@ jobs:
       - name: Check out
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
           path: current
       - name: Check out main
         uses: actions/checkout@v2
@@ -56,3 +53,4 @@ jobs:
         with:
           name: resume
           path: resume.pdf
+          retention-days: 5
