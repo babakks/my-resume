@@ -53,3 +53,4 @@ jobs:
         with:
           name: resume
           path: resume.pdf
+          retention-days: 5
