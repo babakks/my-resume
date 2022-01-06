@@ -1,0 +1,20 @@
+name: Build (main)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    container:
+      image: texlive/texlive:latest
+    runs-on: self-hosted
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Make PDF
+        run: make build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume
+          path: resume.pdf
