@@ -91,16 +91,15 @@
 \newcommand{\buildno}{
     % Command implementation is taken from `mVersion` package documentation.
     %
-    \def\versionfilename{version.dat}
+    \def\versionfilename{version.dat}%
     \IfFileExists{\versionfilename}{}{
         \newwrite\outfile
         \immediate\openout\outfile=\versionfilename
         \immediate\write\outfile{0}
         \immediate\closeout\outfile
-    }
+    }%
     \newread\versionfile
     \openin\versionfile=\versionfilename
     \read\versionfile to \versionline
-    \closein\versionfile
-    \versionline
+    \closein\versionfile\versionline%
 }
