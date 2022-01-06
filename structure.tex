@@ -46,6 +46,8 @@
 
 \usepackage{pagenote}
 
+\usepackage{xargs}
+
 %\pagestyle{} % Stop page numbering
 
 %----------------------------------------------------------------------------------------
@@ -59,9 +61,11 @@
 
 \newcommand*\roottitle[1]{\subsection*{#1}\vspace{-0.3em}\nopagebreak[4]} % Top level sections in the template
 
-\newcommand{\headedsection}[3]{\nopagebreak[4]\begin{indentsection}\item[]\textscale{1.1}{#1}\hfill#2#3\end{indentsection}\nopagebreak[4]} % Section title used for a new employer
+\newcommand{\headedsection}[3]{\vspace{0.80em}\nopagebreak[4]\begin{indentsection}\item[]\textscale{1.1}{#1}\hfill#2#3\end{indentsection}\nopagebreak[4]} % Section title used for a new employer
 
-\newcommand{\headedsubsection}[3]{\nopagebreak[4]\begin{indentsection}\item[]\textbf{#1}\hfill\emph{#2}#3\end{indentsection}\nopagebreak[4]} % Section title used for a new position
+\newcommand{\headedsubsection}[3]{\vspace{0.15em}\nopagebreak[4]\begin{indentsection}\item[]\textbf{#1}\hfill\emph{#2}#3\end{indentsection}\nopagebreak[4]} % Section title used for a new position
+
+\newcommand{\bodytexttitle}[1]{\nopagebreak[4]\begin{indentsection}\item[]{\color{gray}\emph{#1}}\end{indentsection}\pagebreak[2]} % Body text title (indented)
 
 \newcommand{\bodytext}[1]{\nopagebreak[4]\begin{indentsection}\item[]#1\end{indentsection}\pagebreak[2]} % Body text (indented)
 
