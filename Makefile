@@ -1,5 +1,5 @@
 bump-build-no:
-	echo -n $$(( 1+$$(cat version.dat || echo -n "-1") )) > version.dat
+	echo -n "$$(( 1+$$(cut -f1 -d" " version.dat || echo "-1") )) $$(date --iso-8601=d)" > version.dat
 
 check-pretty:
 	latexindent -l resume.tex > resume.pretty.tex \
