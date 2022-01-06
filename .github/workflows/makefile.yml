@@ -8,6 +8,8 @@ on:
 
 jobs:
   check-style:
+    concurrency:
+      group: check-style
     container:
       image: texlive/texlive:latest
     runs-on: self-hosted
@@ -17,6 +19,8 @@ jobs:
       - name: Check style
         run: make check-pretty
   check-version:
+    concurrency:
+      group: check-version
     container:
       image: debian:stable
     runs-on: self-hosted
