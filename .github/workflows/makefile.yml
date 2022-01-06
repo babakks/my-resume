@@ -36,7 +36,9 @@ jobs:
           || ( echo "You need to run 'make bump-build-no'" && exit 1 )
         shell: bash
   build:
-    needs: [check]
+    needs:
+      - check-style
+      - check-version
     container:
       image: texlive/texlive:latest
     runs-on: self-hosted
