@@ -7,7 +7,9 @@ on:
     branches: [main]
 
 jobs:
-  check:
+  check-style:
+    concurrency:
+      group: check-style
     container:
       image: texlive/texlive:latest
     runs-on: self-hosted
@@ -16,8 +18,31 @@ jobs:
         uses: actions/checkout@v2
       - name: Check style
         run: make check-pretty
+  check-version:
+    concurrency:
+      group: check-version
+    container:
+      image: debian:stable
+    runs-on: self-hosted
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          path: current
+      - name: Check out main
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          path: main
+      - name: Compare
+        run: >-
+          [[ $(cut -f1 -d" " main/version.dat) < $(cut -f1 -d" " current/version.dat) ]]
+          || ( echo "You need to run 'make bump-build-no'" && exit 1 )
+        shell: bash
   build:
-    needs: [check]
+    needs:
+      - check-style
+      - check-version
     container:
       image: texlive/texlive:latest
     runs-on: self-hosted
