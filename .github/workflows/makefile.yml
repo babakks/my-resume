@@ -33,6 +33,7 @@ jobs:
       - name: Compare
         run: >-
           [[ $(cut -f1 -d" " main/version.dat) < $(cut -f1 -d" " current/version.dat) ]]
+          || ( echo "You need to run 'make bump-build-no'" && exit 1 )
         shell: bash
   build:
     needs: [check]
