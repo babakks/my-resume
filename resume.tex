@@ -16,24 +16,33 @@
 \hyphenation{}
 \begin{document}
 
-\maintitle{Babak Khalkhali Shandiz}%
-{Software Engineer (1988--)}%
-{\href{https://github.com/babakks/my-resume}{\tiny\color{gray}\texttt{Build\buildno}}}
-\\
 \noindent
-\href{https://github.com/babakks}{\githubmark}
-\href{https://www.linkedin.com/in/babakks/}{\linkedin}
-\href{https://dev.to/babakks}{\devbadge}
-babakks
-\headerentrybreak
-\emoji{computer}~\href{https://babakk.github.io}{babakks.github.io}
-\hfill
-\skypeicon~\href{skype:live:babak.k.shandiz}{babak.k.shandiz}
-\headerentrybreak
-\emoji{mailbox-with-mail}~%
-\href{mailto:babak.k.shandiz@gmail.com}{babak.k.shandiz@gmail.com}
+{
+    \begin{minipage}[c][][t]{0.5\textwidth}
+        \maintitle{Babak Khalkhali Shandiz}
+        {Software Engineer}
+        {Mashhad, IRAN}
+        {\href{https://github.com/babakks/my-resume}{\tiny\color{gray}\texttt{Build\buildno}}}
+    \end{minipage}
+    \begin{minipage}[c][][t]{0.5\textwidth}
+        \small
+        \raggedleft{
+            \texttt{babakks}
+            \href{https://github.com/babakks}{\githubmark}
+            \href{https://www.linkedin.com/in/babakks/}{\linkedin}
+            \href{https://dev.to/babakks}{\devbadge}
+            \\
+            \href{https://babakk.github.io}{\texttt{babakks.github.io}}~\emoji{computer}
+            \\
+            \href{skype:live:babak.k.shandiz}{\texttt{babak.k.shandiz}}~\skypeicon
+            \\
+            \href{mailto:babak.k.shandiz@gmail.com}{\texttt{babak.k.shandiz@gmail.com}}~\emoji{email}
+            \\
+        }
+    \end{minipage}
+}
 
-\spacedhrule{0.9em}{-0.4em}
+\spacedhrule{0.1em}{-0.4em}
 
 \roottitle{Summary} % Root section title
 \vspace{-1.3em} % Reduce whitespace after the multi-column content
@@ -78,28 +87,49 @@ babakks
 
 \roottitle{Experiences}
 
-\headedsection
+\headedsection{}
 {\href{https://www.cafebazaar.ir}{Cafebazaar}}
 {\textsc{Mashhad, IRAN}} {
-    {\bodytext{\textit{Cafebazaar} is the \textit{first} and \textit{largest}
+    {
+            \bodytext{\textit{Cafebazaar} is the \textit{first} and \textit{largest}
                 Iranian Android app market\textsuperscript{\ref{cb-on-wiki}}
                 with 50M users\footnote{\label{cb-users-at-the-time}As of December 2021},
                 and one of the top third-party Android app markets
-                world-wide.\textsuperscript{\ref{3rd-party-stores-on-wiki}}}}
+                world-wide.\textsuperscript{\ref{3rd-party-stores-on-wiki}}
+                As a member of the \textit{App-Delivery} team, our mission was to provide
+                users with the latest versions of applications while keeping device
+                compatibility as a constraint. This was achieved by heavy-load services, written in
+                \textit{Go} and \textit{Python}, that served users with up to 2K~requests
+                per second.
+            }}
 
-    \headedsubsection
+    \headedsubsection{+}
     {Senior Back-End Developer}
     {Jan '20 -- \textit{present}}
     {
         \bodytexttitle{Go, Python, Postgres, Redis, gRPC, Kubernetes}
-        \bodytext{At the \textit{App-Delivery} team, the mission is to provide
-            users with the latest versions of applications while keeping device
-            compatibility as a constraint. High-load services, written in
-            \textit{Go} and \textit{Python}, serve users with up to 2K~requests
-            per second.
-        }}
+        \bodytextitemized{\bull}{Improved update awareness (for
+            externally published apps) from daily to per-hour precision (20x).}
+        \bodytextitemized{\bull}{Transformed service design
+            from basic thread-unsafe/single-thread to thread-safe/multi-thread.}
+        \bodytextitemized{\bull}{Redesigned and re-factored
+            tightly-coupled, legacy, untestable codebase into a \textit{SOLID},
+            loosely-coupled, test-friendly design.}
+        \bodytextitemized{\bull}{Improved service up-time
+            (from unstable 95\% to stable 99.99\%) and unnecessary database
+            roundtrips, by applying an LRU, Redis-backed cache.}
+    }
 
-    \headedsubsection
+    \headedsubsection{+}
+    {R\&D + Reverse Engineering}
+    {Mar '20 -- \textit{present}}
+    {
+        \bodytexttitle{Protobuf}
+        \bodytextitemized{\bull}{Discovered undocumented
+            Protobuf-based API capabilities; subject to ongoing NDA.}
+    }
+
+    \headedsubsection{+}
     {Coding Interviewer}
     {July '20 -- Dec '21}
     {
@@ -107,10 +137,13 @@ babakks
             I participate in review/interview process aimed at evaluation of
             applicants' coding skills. This involves evaluating various aspects
             from basics to more advanced topics including \textit{OOP} design,
-            \textit{Clean Code/Architecture}, and \textit{SOLID} principles.}}
+            \textit{Clean Code/Architecture}, and \textit{SOLID} principles.}
+        \bodytextitemized{\bull}{Developed further insight regarding people's
+            coding habits and common bad practices.}
+    }
 }
 
-\headedsection
+\headedsection{}
 {\href{https://www.partdp.ir}{Part Software Group}}
 {\textsc{Mashhad, IRAN}} {
     {\bodytext{\textit{Part} is a \textit{Fintech} company, developing financial
@@ -118,8 +151,28 @@ babakks
                 company also aims to provide basic infrastructure services as a
                 rich service cloud.}}
 
-    \headedsubsection
-    {Back-End Developer}
+    \headedsubsection{+}
+    {Team Leader}
+    {Aug '19 -- Oct '19}
+    {
+        \bodytexttitle{C\#, SQL~Server, ASP~.NET~MVC}
+        \bodytextitemized{\bull}{Designed dynamic legal document generation tool
+            in \textit{OOP} paradigm.}
+    }
+
+    \headedsubsection{+}
+    {Team Leader}
+    {Dec '18 -- Aug '19}
+    {
+        \bodytexttitle{JavaScript, Redis, PM2}
+        \bodytextitemized{\bull}{Reduced deployment costs via containerization
+            and running with zero external setup.}
+        \bodytextitemized{\bull}{Introduced detailed functional tests to make
+            debugging more convenient.}
+    }
+
+    \headedsubsection{+}
+    {Senior Back-End Developer}
     {Sep '18 -- Dec '18}
     {
         \bodytexttitle{JavaScript, Redis, PM2}
@@ -128,45 +181,26 @@ babakks
             to): authentication/authorization, access control, user profile,
             messaging, and file storage.}
     }
-
-    \headedsubsection
-    {Lead Back-End Developer}
-    {Dec '18 -- Aug '19}
-    {
-        \bodytexttitle{JavaScript, Redis, PM2}
-        \bodytext{At the \textit{Public Services} development team; put effort to
-            reduce deployment costs via containerization and running with zero
-            external setup. Adding detailed functional tests to make debugging
-            more convenient was another goal that was achieved.
-        }
-    }
-
-    \headedsubsection
-    {Lead Back-End Developer}
-    {Aug '19 -- Oct '19}
-    {
-        \bodytexttitle{C\#, SQL~Server, ASP~.NET~MVC}
-        \bodytext{At \textit{.NET} development team, developing \textit{Legal~Tech}
-            business web services.}
-    }
 }
 
-\headedsection
+\headedsection{}
 {\href{http:/www.krec.ir}{Khorasan Regional Electric Company (KREC)}}
 {\textsc{Mashhad, IRAN}} {
     {\bodytext{KREC is a governmental company that manages and maintaines
                 regional power transmission grid.}}
 
-    \headedsubsection
-    {Researcher}
-    {Nov '14 -- Sep '15}
+    \headedsubsection{+}
+    {IT Consultant}
+    {June '19 -- Dec '19}
     {
-        \bodytexttitle{MATLAB}
-        \bodytext{Research on \textit{REF} protection schemes in transmission
-            gird.}
+        \bodytext{The project is an enterprise solution that covers several aspects
+            of \textit{Preventive Maintenance (PM)} routine, done on
+            high-voltage substations, to remove paperworks and ultimately
+            automate the current workflow. The project consists of mobile user
+            interfaces, core function as back-end and relational databases.}
     }
 
-    \headedsubsection
+    \headedsubsection{+}
     {Researcher \& Full-Stack Developer (Military Service for Elites)}
     {June '15 -- Aug '17}
     {
@@ -177,24 +211,23 @@ babakks
             automated routines and user-friendly interfaces.}
     }
 
-    \headedsubsection
-    {IT Consultant}
-    {June '19 -- Dec '19}
+    \headedsubsection{+}
+    {Researcher}
+    {Nov '14 -- Sep '15}
     {
-        \bodytext{The project is an enterprise solution that covers several aspects
-            of \textit{Preventive Maintenance (PM)} routine, done on
-            high-voltage substations, to remove paperworks and ultimately
-            automate the current workflow. The project consists of mobile user
-            interfaces, core function as back-end and relational databases.}
+        \bodytexttitle{MATLAB}
+        \bodytext{Research on \textit{REF} protection schemes in transmission
+            gird.}
     }
+
 }
 
-\headedsection
+\headedsection{}
 {\href{http:/www.krec.ir}{Mashhad Urban Railway Operation company (MUROC)}}
 {\textsc{Mashhad, IRAN}} {
     {}
 
-    \headedsubsection
+    \headedsubsection{+}
     {Architect \& Developer}
     {Mar '15 -- Mar '17}
     {
@@ -205,13 +238,13 @@ babakks
             currently known as \textit{SITRAX}.}}
 }
 
-\headedsection
+\headedsection{}
 {Ferdowsi University of Mashhad (FUM)}
 {\textsc{Mashhad, IRAN}}
 {
     {}
 
-    \headedsubsection
+    \headedsubsection{+}
     {Architect \& Full-Stack Developer}
     {March '11 -- Sep '11}
     {
@@ -221,7 +254,7 @@ babakks
             \textit{SQL~Server}, as B.Sc. graduation project.}}
 }
 
-\headedsection
+\headedsection{}
 {RayanShop}
 {\textsc{Mashhad, IRAN}}
 {
@@ -230,7 +263,7 @@ babakks
                 \href{https://www.digikala.com}{\textit{Digikala}}.}
         }
 
-    \headedsubsection
+    \headedsubsection{+}
     {Full-Stack Developer}
     {2003 -- 2004}
     {
@@ -243,10 +276,10 @@ babakks
 
 \roottitle{OSS Contributions}
 
-\headedsection
+\headedsection{}
 {\href{http://www.github.com/microsoft/vscode}{Microsoft VS Code (\texttt{microsoft/vscode})}}
 {} {
-    \headedsubsection
+    \headedsubsection{+}
     {Contributed}
     {}
     {\bodytext{Versions
@@ -256,9 +289,10 @@ babakks
         }}
 }
 
-\headedsection{Authored VS Code Extensions}
+\headedsection{}
+{Authored VS Code Extensions}
 {} {
-    \headedsubsection
+    \headedsubsection{+}
     {\href{https://marketplace.visualstudio.com/items?itemName=babakks.vscode-vim-shortcuts}{Semi-Vim Shortcuts}
         (\href{https://github.com/babakks/vscode-vim-shortcuts}{\texttt{babakks/vscode-vim-shortcuts}})}
     {May '21}
@@ -269,7 +303,7 @@ babakks
             interfering with the signle-mode editor style.}
     }
 
-    \headedsubsection
+    \headedsubsection{+}
     {\href{https://marketplace.visualstudio.com/items?itemName=babakks.vscode-send-to-terminal}{Send to Terminal}
         (\href{https://github.com/babakks/vscode-send-to-terminal}{\texttt{babakks/vscode-send-to-terminal}})}
     {Jan '22}
@@ -281,7 +315,9 @@ babakks
     }
 }
 
-\headedsection{Others}{}{\bodytext{
+\headedsection{}
+{Others}
+{} {\bodytext{
         \href{https://github.com/microsoft/vscode-github-issue-notebooks/pulls?q=author\%3Ababakks}{VS Code Github issue notebooks},
         \href{https://github.com/ohmyzsh/ohmyzsh/pulls?q=author\%3Ababakks}{Oh My Zsh},
         \href{https://github.com/docker-library/docs/pulls?q=author\%3Ababakks}{Docker library docs},
@@ -290,29 +326,25 @@ babakks
 \spacedhrule{0.2em}{-1em}
 
 \roottitle{Education}
-\headedsection
+\headedsection{}
 {Ferdowsi University of Mashhad (FUM)}
 {\textsc{Mashhad, IRAN}} {
-    \headedsubsection
+    \headedsubsection{+}
     {M.Sc. in Electric Power Engineering}
     {2011 -- 2014}
     {\bodytext{Focused on high voltage power transformer protection schemes.}}
-}
 
-\headedsection
-{Ferdowsi University of Mashhad (FUM)}
-{\textsc{Mashhad, IRAN}} {
-    \headedsubsection
+    \headedsubsection{+}
     {B.Sc. in Electric Power Engineering}
     {2007 -- 2011}
     {\bodytext{Implemented \textit{National Bilateral Energy Market} web application
             using \textit{ASP~.NET} and \textit{SQL~Server}, as graduation project.}}
 }
 
-\headedsection
+\headedsection{}
 {Malek-e-Ashtar College-Preparatory School}
 {\textsc{Mashhad, IRAN}} {
-    \headedsubsection
+    \headedsubsection{+}
     {College-preparatory Diploma in Mathematics \& Physics Science}
     {2006 -- 2007}
     {}
@@ -320,15 +352,15 @@ babakks
 \spacedhrule{1.6em}{-0.4em}
 
 \roottitle{Honors \& Awards}
-\headedsection
+\headedsection{}
 {Ranked 1\textsuperscript{st} among fellow students (B.Sc., GPA: $18.98/20$.)}
 {2011}{}
 
-\headedsection
+\headedsection{}
 {Ranked 1\textsuperscript{st} among fellow students (M.Sc., GPA: $19.17/20$.)}
 {2014}{}
 
-\headedsection
+\headedsection{}
 {Served military service as academic elite.}
 {2015--2017}{}
 
@@ -339,13 +371,13 @@ babakks
 
 \roottitle{Skills}
 
-\headedsection{Design, concepts \& protocols}{}
+\headedsection{}{Design, concepts \& protocols}{}
 {\bodytext{Object oriented programming, design patterns, SOLID principles,
         loose/tight coupling concerns, dependency injection, inversion of
         control, unit/integration tests, databases, web services, SOA, REST,
         microservices.}}
 
-\headedsection % Special section that has an inline header with a 'hanging' paragraph
+\headedsection{} % Special section that has an inline header with a 'hanging' paragraph
 {Implementation \& tools}
 {}
 {
@@ -354,26 +386,26 @@ babakks
         that I've ever worked with -- some in a daily basis, some once in while.
         So, skill levels vary depending on the subject.
     }
-    \headedsubsection{Languages}{}{\textit{C\#}, \textit{TS/JS}, \textit{Python}, \textit{Go}; Familiar with \textit{C/C++} and \textit{Java}}
-    \headedsubsection{Unit testing frameworks/tools}{}{\textit{NUnit}, \textit{MSTest}, \textit{Moq}, \textit{mocha}, \textit{jest}, \textit{chai}, \textit{sinon}}
-    \headedsubsection{Front-end technologies/tools}{}{\textit{HTML}, \textit{CSS}, \textit{jQuery}, \textit{Aurelia}, \textit{Vue.js}}
-    \headedsubsection{Back-end technologies/tools}{}{\textit{nodejs}, \textit{ASP~.NET MVC/Web API}, \textit{ASP~.NET Core}, \textit{express.js}, \textit{django}}
-    \headedsubsection{Communication methods and tools}{}{\textit{gRPC}, \textit{Protobuf}, \textit{REST}}
-    \headedsubsection{Databases}{}{\textit{SQL Server}, \textit{Postgres}, \textit{MongoDB}, \textit{Redis}}
-    \headedsubsection{Big Data Solutions}{}{\textit{Spark}, \textit{PySpark}, \textit{Hadoop}}
-    \headedsubsection{Messaging technologies}{}{\textit{RabbitMQ}, \textit{Kafka}}
-    \headedsubsection{Metering and monitoring}{}{\textit{Prometheus}, \textit{Grafana}}
-    \headedsubsection{Deployment automation}{}{\textit{GitLab CI}, \textit{GitHub Actions}}
-    \headedsubsection{Source control and interfaces}{}{\textit{GIT}, \textit{GitLab}, \textit{GitHub}}
-    \headedsubsection{Linux shells and tools}{}{\textit{bash}, \textit{zsh}, \textit{oh-my-zsh}}
-    \headedsubsection{Orchestration/Containerization and tools}{}{\textit{Kubernetes}, \textit{docker}, \textit{helm}}
-    \headedsubsection{IDEs, editors and development tools}{}{\textit{Visual Studio}, \textit{VS Code}, \textit{VIM}, \textit{Postman}, \textit{WebStorm}}
-    \headedsubsection{Miscellaneous}{}{\LaTeX, \textit{RegEx}, \textit{MATLAB}}
+    \headedsubsection{+}{Programming languages}{}{\textit{C\#}, \textit{TS/JS}, \textit{Python}, \textit{Go}; Familiar with \textit{C/C++} and \textit{Java}}
+    \headedsubsection{+}{Unit testing frameworks/tools}{}{\textit{NUnit}, \textit{MSTest}, \textit{Moq}, \textit{mocha}, \textit{jest}, \textit{chai}, \textit{sinon}}
+    \headedsubsection{+}{Front-end technologies/tools}{}{\textit{HTML}, \textit{CSS}, \textit{jQuery}, \textit{Aurelia}, \textit{Vue.js}}
+    \headedsubsection{+}{Back-end technologies/tools}{}{\textit{nodejs}, \textit{ASP~.NET MVC/Web API}, \textit{ASP~.NET Core}, \textit{express.js}, \textit{django}}
+    \headedsubsection{+}{Communication methods and tools}{}{\textit{gRPC}, \textit{Protobuf}, \textit{REST}}
+    \headedsubsection{+}{Databases}{}{\textit{SQL Server}, \textit{Postgres}, \textit{MongoDB}, \textit{Redis}}
+    \headedsubsection{+}{Big Data Solutions}{}{\textit{Spark}, \textit{PySpark}, \textit{Hadoop}}
+    \headedsubsection{+}{Messaging technologies}{}{\textit{RabbitMQ}, \textit{Kafka}}
+    \headedsubsection{+}{Metering and monitoring}{}{\textit{Prometheus}, \textit{Grafana}}
+    \headedsubsection{+}{Deployment automation}{}{\textit{GitLab CI}, \textit{GitHub Actions}}
+    \headedsubsection{+}{Source control and interfaces}{}{\textit{GIT}, \textit{GitLab}, \textit{GitHub}}
+    \headedsubsection{+}{Linux shells and tools}{}{\textit{bash}, \textit{zsh}, \textit{oh-my-zsh}}
+    \headedsubsection{+}{Orchestration/Containerization and tools}{}{\textit{Kubernetes}, \textit{docker}, \textit{helm}}
+    \headedsubsection{+}{IDEs, editors and development tools}{}{\textit{Visual Studio}, \textit{VS Code}, \textit{VIM}, \textit{Postman}, \textit{WebStorm}}
+    \headedsubsection{+}{Miscellaneous}{}{\LaTeX, \textit{RegEx}, \textit{MATLAB}}
 }
 
 
-\headedsection
-{Natural languages}{}
+\headedsection{}
+{Languages}{}
 {Persian \textit{(native)}, English \textit{(full professional proficiency)}, Arabic \textit{(limited)}}
 
 
