@@ -15,4 +15,4 @@ clean:
 	rm -f *.bak* *.aux *.log *.out *.ent *.fls *.fdb_latexmk *.synctex.gz *.pretty.tex
 
 build:
-	lualatex resume.tex
+	lualatex -interaction=nonstopmode resume.tex
