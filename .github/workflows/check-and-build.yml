@@ -3,6 +3,8 @@ name: Check & Build
 on:
   push:
     branches-ignore: [main]
+  pull_request:
+    branches-ignore: []
 
 jobs:
   check-style:
