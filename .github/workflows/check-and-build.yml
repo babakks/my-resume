@@ -2,9 +2,7 @@ name: Check & Build
 
 on:
   push:
-    branches-ignore: [main]
-  pull_request:
-    branches-ignore: []
+    branches-ignore: ["main"]
 
 jobs:
   check-style:
