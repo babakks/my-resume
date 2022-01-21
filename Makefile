@@ -14,14 +14,26 @@ pretty:
 clean:
 	rm -f *.bak* *.aux *.log *.out *.ent *.fls *.fdb_latexmk *.synctex.gz *.pretty.tex
 
-build:
+build-resume:
 	lualatex -interaction=nonstopmode resume.tex \
 	&& lualatex -interaction=nonstopmode resume.tex
 
-build-using-docker-image:
+build-resume-using-docker-image:
 	export image_name="babakks/my-resume:$$(head -n 1 version.dat | sed -e 's/ /_/g' -e 's/(\|)//g')" \
 	&& export container_name="build-my-resume" \
 	&& docker build -t $$image_name . \
-	&& docker run --name $$container_name -t $$image_name make build \
+	&& docker run --name $$container_name -t $$image_name make build-resume \
 	&& docker cp $$container_name:/app/resume.pdf . \
+	; docker rm $$container_name
+
+build-sop:
+	lualatex -interaction=nonstopmode sop.tex \
+	&& lualatex -interaction=nonstopmode sop.tex
+
+build-sop-using-docker-image:
+	export image_name="babakks/my-resume:$$(head -n 1 version.dat | sed -e 's/ /_/g' -e 's/(\|)//g')" \
+	&& export container_name="build-my-sop" \
+	&& docker build -t $$image_name . \
+	&& docker run --name $$container_name -t $$image_name make build-sop \
+	&& docker cp $$container_name:/app/sop.pdf . \
 	; docker rm $$container_name
