@@ -12,9 +12,13 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
-      - name: Make PDF
-        run: make build
+      - name: Make resume (PDF)
+        run: make build-resume
+      - name: Make SOP (PDF)
+        run: make build-sop
       - uses: actions/upload-artifact@v2
         with:
-          name: resume
-          path: resume.pdf
+          name: resume-and-sop-${{ github.ref_name }}-${{ github.sha }}
+          path: |
+            resume.pdf
+            sop.pdf
