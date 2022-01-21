@@ -24,4 +24,4 @@ build-using-docker-image:
 	&& docker build -t $$image_name . \
 	&& docker run --name $$container_name -t $$image_name make build \
 	&& docker cp $$container_name:/app/resume.pdf . \
-	&& docker rm $$container_name
+	; docker rm $$container_name
