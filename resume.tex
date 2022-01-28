@@ -18,395 +18,243 @@
 
 \input{title}
 
-\roottitle{Summary} % Root section title
-\vspace{-1.3em} % Reduce whitespace after the multi-column content
-\begin{multicols}{2}  % Start a two-column layout
+\roottitle{Summary}
+\vspace{-1.3em}
+\begin{multicols}{2}
     \noindent
-    I started programming at an early age. This provided me with the opportunity
-    to experience some influential platforms/technologies, like
-    \textit{Commodore~64} or \textit{Sinclair~Spectrum} and rather modern ones
-    like \textit{VB6} or \textit{Turbo~C++}. I've been using \textit{C\#} and
-    \textit{.NET} since their early days, and soon found myself being passionate
-    about \textit{Object-Oriented Programming} and began exploring books and
-    articles (mostly on \textit{The~Code~Project} then) on design patterns,
-    application architecture, clean coding and experimenting ideas and
-    self-thoughts.
-
-    In the late 2000's, relational databases attracted my attention more than
-    before. Since then, I occasionally read on database design and other
-    concepts on the topic and try to make a point of following standards on my
-    projects.
-
-    Out of workplace, I actively provide consult to governmental or personal
-    software projects. In my spare time, I'm a curious learner and a developer who
-    is passionate about \textit{C\#}/\textit{TypeScript} and occasionally
-    contributes to open-source projects. My last but not least interest is
-    creating technical content based on day-to-day experience. I
-    occasionally share my thoughts on my personal blog at
-    \href{https://babakks.github.io}{Github} and
+    I started computer programming on a \textit{Commodore~64} when I was 10.
+    Now, after two decades, I actively provide consult to governmental or
+    personal software projects. In my spare time, I'm a curious learner and a
+    \textit{C\#}/\textit{TypeScript} developer who contributes to open-source
+    projects. My last but not least interest is creating technical content based
+    on day-to-day experience. I occasionally share my thoughts on my personal
+    blog at \href{https://babakks.github.io}{Github} and
     \href{https://dev.to/babakks}{DEV}.
-
-    Currently, I'm a senior software engineer at
-    \href{https://cafebazaar.ir}{\emph{Cafebazaar}}, the \textit{largest}
-    Iranian Android app store%
-    \footnote{\label{cb-on-wiki}%
-        \href{https://en.wikipedia.org/wiki/Cafe\_Bazaar}{Cafebazaar on Wikipedia}}%
-    and one of the top third-party app markets world-wide%
-    \footnote{\label{3rd-party-stores-on-wiki}%
-        \href{https://en.wikipedia.org/wiki/List\_of\_mobile\_app\_distribution\_platforms\#Third-party\_platforms}%
-        {Third-party Android app markets on Wikipedia}},
-    developing high-load web services in \textit{Go} and \textit{Python}.
 \end{multicols}
-\spacedhrule{0.5em}{-0.4em}
+\sectionrule{}
 
 \roottitle{Experiences}
+\begin{customitemize}
+    \item \companytitle{\href{https://github.com/babakks}{Open-Source Software Contributor}}{Jan 2018 -- Present}
+    \begin{customitemize}
+        \item \jobtitle{\href{http://www.github.com/microsoft/vscode}{Microsoft VS Code (\texttt{microsoft/vscode})}}{}
+        \begin{customitemize}
+            \item{Listed as contributor in vesions
+                        \href{https://github.com/microsoft/vscode-docs/blob/723adc3cdf3afca7f7cea071c03d86dc02736c2c/release-notes/v1_36.md\#thank-you}{$1.36.0$}
+                        and
+                        \href{https://github.com/microsoft/vscode-docs/blob/c52893f1c6d611e6f1f09838db922ea4453c3933/release-notes/v1_50.md\#thank-you}{$1.50.0$}.}
+            \item{Authored extensions:}
+            \begin{customitemize}
+                \item{\href{https://marketplace.visualstudio.com/items?itemName=babakks.vscode-vim-shortcuts}{Semi-Vim Shortcuts} (\href{https://github.com/babakks/vscode-vim-shortcuts}{\texttt{babakks/vscode-vim-shortcuts}})}
+                \item{\href{https://marketplace.visualstudio.com/items?itemName=babakks.vscode-send-to-terminal}{Send to Terminal} (\href{https://github.com/babakks/vscode-send-to-terminal}{\texttt{babakks/vscode-send-to-terminal}})}
+            \end{customitemize}
+        \end{customitemize}
+        \item \jobtitle{Others}{}
+        \begin{customitemize}
+            \item {
+                        \href{https://github.com/microsoft/vscode-github-issue-notebooks/pulls?q=author\%3Ababakks}{VS Code Github issue notebooks},
+                        \href{https://github.com/ohmyzsh/ohmyzsh/pulls?q=author\%3Ababakks}{Oh My Zsh},
+                        \href{https://github.com/docker-library/docs/pulls?q=author\%3Ababakks}{Docker library docs},
+                        \href{https://github.com/helm/charts/pulls?q=author\%3Ababakks}{Helm charts}, etc.
+                  }
+        \end{customitemize}
+    \end{customitemize}
 
-\headedsection{}
-{\href{https://www.cafebazaar.ir}{Cafebazaar}}
-{\textsc{Mashhad, IRAN}} {
-    {
-            \bodytext{\textit{Cafebazaar} is the \textit{first} and \textit{largest}
-                Iranian Android app market\textsuperscript{\ref{cb-on-wiki}}
-                with 50M users\footnote{\label{cb-users-at-the-time}As of December 2021},
-                and one of the top third-party Android app markets
-                world-wide.\textsuperscript{\ref{3rd-party-stores-on-wiki}}
-                As a member of the \textit{App-Delivery} team, our mission was to provide
-                users with the latest versions of applications while keeping device
-                compatibility as a constraint. This was achieved by heavy-load services, written in
-                \textit{Go} and \textit{Python}, that served users with up to 2K~requests
-                per second.
-            }}
+    \item \companytitle{\href{https://www.cafebazaar.ir}{Cafebazaar}}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{Senior Back-End Developer}{Jan 2020 -- Jan 2022}
+        \begin{customitemize}
+            \item[] {\stackoftech{Go, Python, PostgreSQL, Redis, gRPC, Kubernetes}}
+            \item{Improved update awareness (for external apps) from daily to per-hour precision (20x).}
+            \item{Improved performance by refactoring toward multi-thread architecture (10x).}
+            \item{Redesigned tightly-coupled, untestable codebase into a loosely-coupled, test-friendly design.}
+            \item{Improved service up-time (from unstable 95\% to stable 99.99\%) by implementing an LRU cache.}
+        \end{customitemize}
+        \item \jobtitle{R\&D + Reverse Engineering}{Mar 2020 -- Dec 2022}
+        \begin{customitemize}
+            \item[] {\stackoftech{Protobuf}}
+            \item{Discovered undocumented Protobuf-based API capabilities; subject to ongoing NDA.}
+        \end{customitemize}
+        \item \jobtitle{Technical Interviewer}{July 2020 -- Dec 2021}
+        \begin{customitemize}
+            \item[] {\stackoftech{SOLID, OOP, Testing, Dependency Injection, Design Patterns, Clean Code/Architecture}}
+            \item{Developed further insight regarding people's coding habits and common bad practices.}
+        \end{customitemize}
+    \end{customitemize}
 
-    \headedsubsection{+}
-    {Senior Back-End Developer}
-    {Jan '20 -- \textit{present}}
-    {
-        \bodytexttitle{Go, Python, Postgres, Redis, gRPC, Kubernetes}
-        \bodytextitemized{\bull}{Improved update awareness (for
-            externally published apps) from daily to per-hour precision (20x).}
-        \bodytextitemized{\bull}{Transformed service design
-            from basic thread-unsafe/single-thread to thread-safe/multi-thread.}
-        \bodytextitemized{\bull}{Redesigned and re-factored
-            tightly-coupled, legacy, untestable codebase into a \textit{SOLID},
-            loosely-coupled, test-friendly design.}
-        \bodytextitemized{\bull}{Improved service up-time
-            (from unstable 95\% to stable 99.99\%) and unnecessary database
-            roundtrips, by applying an LRU, Redis-backed cache.}
-    }
+    \item \companytitle{\href{https://www.partdp.ir}{Part Software Group}}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{Technical Team Lead}{Aug 2019 -- Oct 2019}
+        \begin{customitemize}
+            \item[] {\stackoftech{C\#, SQL~Server, ASP~.NET~MVC}}
+            \item{Designed online legal document generation tool in \textit{OOP} paradigm.}
+        \end{customitemize}
+        \item \jobtitle{Technical Team Lead}{Dec 2018 -- Aug 2019}
+        \begin{customitemize}
+            \item[] {\stackoftech{JavaScript, Redis, PM2, Docker}}
+            \item{Reduced deployment time (from hours to seconds) via containerization (10x).}
+            \item{Introduced detailed functional tests to make debugging more convenient/straightforward.}
+        \end{customitemize}
+        \item \jobtitle{Senior Back-End Developer}{Sep 2018 -- Dec 2018}
+        \begin{customitemize}
+            \item[] {\stackoftech{JavaScript, Redis, PM2}}
+        \end{customitemize}
+    \end{customitemize}
 
-    \headedsubsection{+}
-    {R\&D + Reverse Engineering}
-    {Mar '20 -- \textit{present}}
-    {
-        \bodytexttitle{Protobuf}
-        \bodytextitemized{\bull}{Discovered undocumented
-            Protobuf-based API capabilities; subject to ongoing NDA.}
-    }
+    \item \companytitle{\href{http:/www.krec.ir}{Khorasan Regional Electric Company (KREC) \emph{(Govt.)}}}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{IT Consultant}{June 2019 -- Dec 2019}
+        \item \jobtitle{Windows Application Developer}{June 2015 -- Aug 2017}
+        \begin{customitemize}
+            \item[] {\stackoftech{C\#, WPF}}
+        \end{customitemize}
+    \end{customitemize}
 
-    \headedsubsection{+}
-    {Technical Interviewer}
-    {July '20 -- Dec '21}
-    {
-        \bodytext{As a member of the \textit{Software Enigineering Interview} team,
-            I participate in review/interview process aimed at evaluation of
-            applicants' coding skills. This involves evaluating various aspects
-            from basics to more advanced topics including \textit{OOP} design,
-            \textit{Clean Code/Architecture}, and \textit{SOLID} principles.}
-        \bodytextitemized{\bull}{Developed further insight regarding people's
-            coding habits and common bad practices.}
-    }
-}
+    \item \companytitle{\href{https://metro.mashhad.ir}{Mashhad Urban Railway Operation Company (MUROC) \emph{(Govt.)}}}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{Software Engineer}{Mar 2015 -- Mar 2017}
+        \begin{customitemize}
+            \item[] {\stackoftech{MATLAB, \LaTeX}}
+        \end{customitemize}
+    \end{customitemize}
 
-\headedsection{}
-{\href{https://www.partdp.ir}{Part Software Group}}
-{\textsc{Mashhad, IRAN}} {
-    {\bodytext{\textit{Part} is a \textit{Fintech} company, developing financial
-                solutions in stock market related and banking fields. The
-                company also aims to provide basic infrastructure services as a
-                rich service cloud.}}
+    \item \companytitle{Freelance Software Engineer}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{Windows/Web Application Developer}{Jan 2010 -- Jan 2015}
+        \begin{customitemize}
+            \item[] {\stackoftech{.NET~Framework, ASP~.NET, C\#, VB~.NET, SQL~Server}}
+        \end{customitemize}
+    \end{customitemize}
 
-    \headedsubsection{+}
-    {Technical Team Lead}
-    {Aug '19 -- Oct '19}
-    {
-        \bodytexttitle{C\#, SQL~Server, ASP~.NET~MVC}
-        \bodytextitemized{\bull}{Designed dynamic legal document generation tool
-            in \textit{OOP} paradigm.}
-    }
+\end{customitemize}
 
-    \headedsubsection{+}
-    {Technical Team Lead}
-    {Dec '18 -- Aug '19}
-    {
-        \bodytexttitle{JavaScript, Redis, PM2}
-        \bodytextitemized{\bull}{Reduced deployment costs via containerization
-            and running with zero external setup.}
-        \bodytextitemized{\bull}{Introduced detailed functional tests to make
-            debugging more convenient.}
-    }
-
-    \headedsubsection{+}
-    {Senior Back-End Developer}
-    {Sep '18 -- Dec '18}
-    {
-        \bodytexttitle{JavaScript, Redis, PM2}
-        \bodytext{Senior back-end developer at \textit{Public Services} team, with
-            \textit{nodejs} as platform. The services include (but not limited
-            to): authentication/authorization, access control, user profile,
-            messaging, and file storage.}
-    }
-}
-
-\headedsection{}
-{\href{http:/www.krec.ir}{Khorasan Regional Electric Company (KREC)}}
-{\textsc{Mashhad, IRAN}} {
-    {\bodytext{KREC is a governmental company that manages and maintaines
-                regional power transmission grid.}}
-
-    \headedsubsection{+}
-    {IT Consultant}
-    {June '19 -- Dec '19}
-    {
-        \bodytext{The project is an enterprise solution that covers several aspects
-            of \textit{Preventive Maintenance (PM)} routine, done on
-            high-voltage substations, to remove paperworks and ultimately
-            automate the current workflow. The project consists of mobile user
-            interfaces, core function as back-end and relational databases.}
-    }
-
-    \headedsubsection{+}
-    {Researcher \& Full-Stack Developer (Military Service for Elites)}
-    {June '15 -- Aug '17}
-    {
-        \bodytexttitle{C\#, WPF}
-        \bodytext{The research topic was to find the optimal solution for power
-            transformer overloading dilemma. The implementation phase, was to
-            develop a software platform that delivers research results as
-            automated routines and user-friendly interfaces.}
-    }
-
-    \headedsubsection{+}
-    {Researcher}
-    {Nov '14 -- Sep '15}
-    {
-        \bodytexttitle{MATLAB}
-        \bodytext{Research on \textit{REF} protection schemes in transmission
-            gird.}
-    }
-
-}
-
-\headedsection{}
-{\href{http:/www.krec.ir}{Mashhad Urban Railway Operation company (MUROC)}}
-{\textsc{Mashhad, IRAN}} {
-    {}
-
-    \headedsubsection{+}
-    {Architect \& Developer}
-    {Mar '15 -- Mar '17}
-    {
-        \bodytexttitle{MATLAB, \LaTeX}
-        \bodytext{The project was to implement an integrated electro-mechanical
-            simulation system to be used in further energy
-            optimization studies. The platform was successfully realized,
-            currently known as \textit{SITRAX}.}}
-}
-
-\headedsection{}
-{Ferdowsi University of Mashhad (FUM)}
-{\textsc{Mashhad, IRAN}}
-{
-    {}
-
-    \headedsubsection{+}
-    {Architect \& Full-Stack Developer}
-    {March '11 -- Sep '11}
-    {
-        \bodytexttitle{C\#, SQL~Server, ASP~.NET~Web~Forms}
-        \bodytext{Designing and implementing the \textit{National Bilateral Energy
-                Market} web application using \textit{ASP~.NET} and
-            \textit{SQL~Server}, as B.Sc. graduation project.}}
-}
-
-\headedsection{}
-{RayanShop}
-{\textsc{Mashhad, IRAN}}
-{
-    {\bodytext{\textit{RayanShop} was a pioneer online-shopping startup in Iran,
-                long before current well-known rivals like
-                \href{https://www.digikala.com}{\textit{Digikala}}.}
-        }
-
-    \headedsubsection{+}
-    {Full-Stack Developer}
-    {2003 -- 2004}
-    {
-        \bodytexttitle{ASP, VB6, Access}
-        \bodytext{Developing back-end (\textit{Classic ASP}) and front-end (vanilla
-            \textit{JavaScript}).}
-    }
-}
-\spacedhrule{0.2em}{-1em}
-
-\roottitle{OSS Contributions}
-
-\headedsection{}
-{\href{http://www.github.com/microsoft/vscode}{Microsoft VS Code (\texttt{microsoft/vscode})}}
-{} {
-    \headedsubsection{+}
-    {Contributed}
-    {}
-    {\bodytext{Versions
-            \href{https://github.com/microsoft/vscode-docs/blob/723adc3cdf3afca7f7cea071c03d86dc02736c2c/release-notes/v1_36.md\#thank-you}{$1.36.0$}
-            and
-            \href{https://github.com/microsoft/vscode-docs/blob/c52893f1c6d611e6f1f09838db922ea4453c3933/release-notes/v1_50.md\#thank-you}{$1.50.0$}.
-        }}
-}
-
-\headedsection{}
-{Authored VS Code Extensions}
-{} {
-    \headedsubsection{+}
-    {\href{https://marketplace.visualstudio.com/items?itemName=babakks.vscode-vim-shortcuts}{Semi-Vim Shortcuts}
-        (\href{https://github.com/babakks/vscode-vim-shortcuts}{\texttt{babakks/vscode-vim-shortcuts}})}
-    {May '21}
-    {
-        \bodytexttitle{TypeScript}
-        \bodytext{A productivity booster extension that brings VIM's navigation
-            shortcuts into VS Code but without breaking editor configuration or
-            interfering with the signle-mode editor style.}
-    }
-
-    \headedsubsection{+}
-    {\href{https://marketplace.visualstudio.com/items?itemName=babakks.vscode-send-to-terminal}{Send to Terminal}
-        (\href{https://github.com/babakks/vscode-send-to-terminal}{\texttt{babakks/vscode-send-to-terminal}})}
-    {Jan '22}
-    {
-        \bodytexttitle{TypeScript}
-        \bodytext{For shell users who need to copy some content/file from editor
-            to the integrated terminal without the need to save the content in a
-            separate file.}
-    }
-}
-
-\headedsection{}
-{Others}
-{} {\bodytext{
-        \href{https://github.com/microsoft/vscode-github-issue-notebooks/pulls?q=author\%3Ababakks}{VS Code Github issue notebooks},
-        \href{https://github.com/ohmyzsh/ohmyzsh/pulls?q=author\%3Ababakks}{Oh My Zsh},
-        \href{https://github.com/docker-library/docs/pulls?q=author\%3Ababakks}{Docker library docs},
-        \href{https://github.com/helm/charts/pulls?q=author\%3Ababakks}{Helm charts}, etc.
-    }}
-\spacedhrule{0.2em}{-1em}
+\sectionrule{}
 
 \roottitle{Education}
-\headedsection{}
-{Ferdowsi University of Mashhad (FUM)}
-{\textsc{Mashhad, IRAN}} {
-    \headedsubsection{+}
-    {M.Sc. in Electric Power Engineering}
-    {2011 -- 2014}
-    {\bodytext{Focused on high voltage power transformer protection schemes.}}
-
-    \headedsubsection{+}
-    {B.Sc. in Electric Power Engineering}
-    {2007 -- 2011}
-    {\bodytext{Implemented \textit{National Bilateral Energy Market} web application
-            using \textit{ASP~.NET} and \textit{SQL~Server}, as graduation project.}}
-}
-
-\headedsection{}
-{Malek-e-Ashtar College-Preparatory School}
-{\textsc{Mashhad, IRAN}} {
-    \headedsubsection{+}
-    {College-preparatory Diploma in Mathematics \& Physics Science}
-    {2006 -- 2007}
-    {}
-}
-\spacedhrule{1.6em}{-0.4em}
+\begin{customitemize}
+    \item \companytitle{\href{https://en.um.ac.ir/}{Ferdowsi University of Mashhad (FUM)}}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{M.Sc. in Electric Power Engineering}{Sep 2011 -- Sep 2014}
+        \item \jobtitle{B.Sc. in Electric Power Engineering}{Sep 2007 -- Sep 2011}
+    \end{customitemize}
+    \item \companytitle{Malek-e-Ashtar College-Preparatory School}{\textsc{Mashhad, IRAN}}
+    \begin{customitemize}
+        \item \jobtitle{College-Preparatory Diploma in Mathematics \& Physics Science}{Sep 2006 -- Sep 2007}
+    \end{customitemize}
+\end{customitemize}
+\sectionrule{}
 
 \roottitle{Honors \& Awards}
-\headedsection{}
-{Ranked 1\textsuperscript{st} among fellow students (B.Sc., GPA: $18.98/20$.)}
-{2011}{}
-
-\headedsection{}
-{Ranked 1\textsuperscript{st} among fellow students (M.Sc., GPA: $19.17/20$.)}
-{2014}{}
-
-\headedsection{}
-{Served military service as academic elite.}
-{2015--2017}{}
-
-\spacedhrule{0.5em}{-0.4em}
-
-
-%	SKILLS SECTION
+\begin{customitemize}
+    \item \companytitle{Served military service as academic elite.}{2015 -- 2017}
+    \item \companytitle{Ranked 1\textsuperscript{st} among fellow students (M.Sc., GPA: $19.17/20$.)}{2014}
+    \item \companytitle{Ranked 1\textsuperscript{st} among fellow students (B.Sc., GPA: $18.98/20$.)}{2011}
+\end{customitemize}
+\sectionrule{}
 
 \roottitle{Skills}
-
-\headedsection{}{Design, concepts \& protocols}{}
-{\bodytext{Object oriented programming, design patterns, SOLID principles,
-        loose/tight coupling concerns, dependency injection, inversion of
-        control, unit/integration tests, databases, web services, SOA, REST,
-        microservices.}}
-
-\headedsection{} % Special section that has an inline header with a 'hanging' paragraph
-{Implementation \& tools}
-{}
-{
-    \bodytext{
-        Here is the exhaustive set of specific languages/platforms/tools
-        that I've ever worked with -- some in a daily basis, some once in while.
-        So, skill levels vary depending on the subject.
-    }
-    \headedsubsection{+}{Programming languages}{}{\textit{C\#}, \textit{TS/JS}, \textit{Python}, \textit{Go}; Familiar with \textit{C/C++} and \textit{Java}}
-    \headedsubsection{+}{Unit testing frameworks/tools}{}{\textit{NUnit}, \textit{MSTest}, \textit{Moq}, \textit{mocha}, \textit{jest}, \textit{chai}, \textit{sinon}}
-    \headedsubsection{+}{Front-end technologies/tools}{}{\textit{HTML}, \textit{CSS}, \textit{jQuery}, \textit{Aurelia}, \textit{Vue.js}}
-    \headedsubsection{+}{Back-end technologies/tools}{}{\textit{nodejs}, \textit{ASP~.NET MVC/Web API}, \textit{ASP~.NET Core}, \textit{express.js}, \textit{django}}
-    \headedsubsection{+}{Communication methods and tools}{}{\textit{gRPC}, \textit{Protobuf}, \textit{REST}}
-    \headedsubsection{+}{Databases}{}{\textit{SQL Server}, \textit{Postgres}, \textit{MongoDB}, \textit{Redis}}
-    \headedsubsection{+}{Big Data Solutions}{}{\textit{Spark}, \textit{PySpark}, \textit{Hadoop}}
-    \headedsubsection{+}{Messaging technologies}{}{\textit{RabbitMQ}, \textit{Kafka}}
-    \headedsubsection{+}{Metering and monitoring}{}{\textit{Prometheus}, \textit{Grafana}}
-    \headedsubsection{+}{Deployment automation}{}{\textit{GitLab CI}, \textit{GitHub Actions}}
-    \headedsubsection{+}{Source control and interfaces}{}{\textit{GIT}, \textit{GitLab}, \textit{GitHub}}
-    \headedsubsection{+}{Linux shells and tools}{}{\textit{bash}, \textit{zsh}, \textit{oh-my-zsh}}
-    \headedsubsection{+}{Orchestration/Containerization and tools}{}{\textit{Kubernetes}, \textit{docker}, \textit{helm}}
-    \headedsubsection{+}{IDEs, editors and development tools}{}{\textit{Visual Studio}, \textit{VS Code}, \textit{VIM}, \textit{Postman}, \textit{WebStorm}}
-    \headedsubsection{+}{Miscellaneous}{}{\LaTeX, \textit{RegEx}, \textit{MATLAB}}
-}
-
-
-\headedsection{}
-{Languages}{}
-{Persian \textit{(native)}, English \textit{(full professional proficiency)}, Arabic \textit{(limited)}}
-
-
-\spacedhrule{1.6em}{-0.4em}
-
-%	INTERESTS SECTION
+\begin{customitemize}
+    \item \companytitle{Design, concepts \& protocols}{}
+    \begin{customitemize}
+        \item {\textit{Object oriented programming (OOP), design patterns, SOLID principles,
+                        loose/tight coupling concerns, dependency injection (DI), inversion of
+                        control (IoC), unit/integration tests, test-driven development (TDD),
+                        relational databases, web services, SOA, REST, microservices.
+                    }}
+    \end{customitemize}
+    \item \companytitle{Implementation \& tools}{}
+    \begin{customitemize}
+        \item[] {
+                    (Here is the exhaustive set of specific languages/platforms/tools
+                    that I've ever worked with -- some in a daily basis, some once in while.
+                    So, skill levels vary depending on the subject.)
+              }
+        \item {
+                    \textit{
+                        \#,
+                        TS/JS,
+                        Python,
+                        Go,
+                        C/C++,
+                        Java,
+                        NUnit,
+                        MSTest,
+                        Moq,
+                        mocha,
+                        jest,
+                        chai,
+                        sinon,
+                        HTML,
+                        CSS,
+                        jQuery,
+                        Aurelia,
+                        Vue.js,
+                        nodejs,
+                        ASP~.NET MVC/Web API,
+                        ASP~.NET Core,
+                        express.js,
+                        django,
+                        gRPC,
+                        Protobuf,
+                        REST,
+                        SQL,
+                        SQL Server,
+                        Postgres,
+                        MongoDB,
+                        Redis,
+                        Spark,
+                        PySpark,
+                        Hadoop,
+                        RabbitMQ,
+                        Kafka,
+                        Prometheus,
+                        Grafana,
+                        GitLab CI,
+                        GitHub Actions,
+                        GIT,
+                        GitLab,
+                        GitHub,
+                        bash,
+                        zsh,
+                        oh-my-zsh,
+                        Kubernetes,
+                        docker,
+                        helm,
+                        Visual Studio,
+                        VS Code,
+                        VIM,
+                        Postman,
+                        WebStorm,
+                        \LaTeX,
+                        RegEx,
+                        MATLAB.}
+              }
+    \end{customitemize}
+    \item \companytitle{Languages}{Persian \textit{(native)}, English \textit{(full professional proficiency)}, Arabic \textit{(limited)}}
+\end{customitemize}
+\sectionrule{}
 
 \roottitle{Interests}
-
-\inlineheadsection
-{Non-exhaustive and in alphabetical order:}
-{
-    Art,
-    books,
-    graphics,
-    mathematics,
-    music,
-    open source projects,
-    painting,
-    problem solving,
-    riddles,
-    software engineering,
-    studying,
-    teaching,
-    video games,
-    writing.
-}
-{}
+\begin{customitemize}
+    \item \companytitle{Non-exhaustive and in alphabetical order}{}
+    \begin{customitemize}
+        \item {\textit{
+                        Art,
+                        books,
+                        graphics,
+                        mathematics,
+                        music,
+                        open source projects,
+                        painting,
+                        problem solving,
+                        riddles,
+                        software engineering,
+                        studying,
+                        teaching,
+                        video games,
+                        writing.
+                    }}
+    \end{customitemize}
+\end{customitemize}
 
 \end{document}
