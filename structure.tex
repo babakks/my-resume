@@ -35,10 +35,9 @@
 
 \usepackage{relsize} % Required for the \textscale command for custom small caps text
 
-\usepackage{hyperref} % Required for customizing links
 \usepackage{xcolor} % Required for specifying custom colors
-\definecolor{dark-blue}{rgb}{0.15,0.15,0.4} % Defines the dark blue color used for links
-\hypersetup{colorlinks,linkcolor={dark-blue},citecolor={dark-blue},urlcolor={dark-blue}} % Assigns the dark blue color to all links in the template
+
+\usepackage[hidelinks]{hyperref} % Required for customizing links
 
 \usepackage{tgpagella} % Use the TeX Gyre Pagella font throughout the document
 \usepackage[T1]{fontenc}
@@ -50,50 +49,41 @@
 
 %\pagestyle{} % Stop page numbering
 
-%----------------------------------------------------------------------------------------
-%	DEFINE STRUCTURAL COMMANDS
-%----------------------------------------------------------------------------------------
-
-\newenvironment{indentsection} % Defines the indentsection environment which indents text in sections titles
-{\begin{list}{}{\setlength{\leftmargin}{\newparindent}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}\setlength{\itemsep}{0pt}\setlength{\topsep}{0pt}}}{\end{list}}
-
-\newcommand*\maintitle[4]{\noindent{\LARGE\textbf{#1}}\\\emph{#2}\\{#3}\\{#4}\vspace{0.3em}}
-
-\newcommand*\roottitle[1]{\subsection*{#1}\vspace{-0.3em}\nopagebreak[4]} % Top level sections in the template
-
-\newcommand{\headedsection}[4]{\vspace{0.80em}\nopagebreak[4]\begin{indentsection}\item[#1]\textscale{1.1}{#2}\hfill#3#4\end{indentsection}\nopagebreak[4]} % Section title used for a new employer
-
-\newcommand{\headedsubsection}[4]{\vspace{0.15em}\nopagebreak[4]\begin{indentsection}\item[#1]\textbf{#2}\hfill\emph{#3}#4\end{indentsection}\nopagebreak[4]} % Section title used for a new position
-
-\newcommand{\bodytexttitle}[1]{\nopagebreak[4]\begin{indentsection}\item[]{\color{gray}\emph{#1}}\end{indentsection}\pagebreak[2]} % Body text title (indented)
-
-\newcommand{\bodytext}[1]{\nopagebreak[4]\begin{indentsection}\item[]#1\end{indentsection}\pagebreak[2]} % Body text (indented)
-
-\newcommand{\bodytextitemized}[2]{\nopagebreak[4]\begin{indentsection}{\item[#1]{#2}}\end{indentsection}\pagebreak[2]} % Body text (indented)
-
-\newcommand{\inlineheadsection}[2]{\begin{basedescript}{\setlength{\leftmargin}{\doubleparindent}}\item[\hspace{\newparindent}\textbf{#1}]#2\end{basedescript}\vspace{-1.7em}} % Section title where body text starts immediately after the title
-
-\newcommand*\acr[1]{\textscale{.85}{#1}} % Custom acronyms command
-
-\newcommand*\bull{\ \ \raisebox{-0.365em}[-1em][-1em]{\textscale{4}{$\cdot$}} \ } % Custom bullet point for separating content
-
-\newlength{\newparindent} % It seems not to work when simply using \parindent...
-\addtolength{\newparindent}{\parindent}
-
-\newlength{\doubleparindent} % A double \parindent...
-\addtolength{\doubleparindent}{\parindent}
+\newenvironment{customitemize}
+{
+    \begin{itemize}{}{
+            \setlength{\labelwidth}{3em}
+            \setlength{\labelsep}{0em}
+            \setlength{\parsep}{0.1em}
+            \setlength{\itemsep}{0.1em}
+            \setlength{\leftmargin}{1.5cm}
+            \setlength{\rightmargin}{2cm}
+            \setlength{\itemindent}{0em}
+            \let\makelabel=\makeboxlabel
+        }}
+        {\end{itemize}}
 
 \newcommand{\breakvspace}[1]{\pagebreak[2]\vspace{#1}\pagebreak[2]} % A custom vspace command with custom before and after spacing lengths
 \newcommand{\nobreakvspace}[1]{\nopagebreak[4]\vspace{#1}\nopagebreak[4]} % A custom vspace command with custom before and after spacing lengths that do not break the page
-
 \newcommand{\spacedhrule}[2]{\breakvspace{#1}\hrule\nobreakvspace{#2}} % Defines a horizontal line with some vertical space before and after it
+
+\newcommand*\maintitle[4]{\noindent{\LARGE\textbf{#1}}\\\emph{#2}\\{#3}\\{#4}\vspace{0.3em}}
+\newcommand*\roottitle[1]{\section*{#1}\vspace{-0.3em}\nopagebreak[4]}
+\newcommand*\sectionrule{\nopagebreak[4]\spacedhrule{0.5em}{-0.5em}\nopagebreak[4]}
+
+\newlength{\newparindent} % It seems not to work when simply using \parindent...
+\addtolength{\newparindent}{\parindent}
+\newlength{\doubleparindent} % A double \parindent...
+\addtolength{\doubleparindent}{\parindent}
+
+\newcommand{\companytitle}[2]{\textscale{1.1}{#1}\hfill\textit{#2}}
+\newcommand{\jobtitle}[2]{\textbf{#1}\hfill\emph{#2}}
+\newcommand{\stackoftech}[1]{\emph{#1}}
 
 \newcommand{\githubmark}{\raisebox{-0.15em}{\includegraphics[height=1em]{img/github-mark.eps}}}
 \newcommand{\skypeicon}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/skype-icon.eps}}}
 \newcommand{\devbadge}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/dev-badge.eps}}}
 \newcommand{\linkedin}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/LI-In-Bug.png}}}
-
-\newcommand{\headerentrybreak}{\hspace{0.5em}}
 
 \newcommand{\buildno}{
     % Command implementation is taken from `mVersion` package documentation.
