@@ -13,7 +13,7 @@ check-pretty:
 
 check-pretty-using-docker-image:
 	export container_name="check-pretty" \
-	&& docker build -t $(image_name) . \
+	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name $(image_name) make check-pretty \
 	; export exit_code="$$?" \
 	; docker rm $$container_name \
@@ -27,7 +27,7 @@ pretty:
 
 pretty-using-docker-image:
 	export container_name="prettify-my-resume" \
-	&& docker build -t $(image_name) . \
+	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name -t $(image_name) make pretty \
 	; export exit_code="$$?" \
 	; docker cp $$container_name:/app/resume.tex . \
@@ -46,7 +46,7 @@ build-resume:
 
 build-resume-using-docker-image:
 	export container_name="build-my-resume" \
-	&& docker build -t $(image_name) . \
+	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name -t $(image_name) make build-resume \
 	; export exit_code=$$? \
 	; docker cp $$container_name:/app/resume.pdf . \
@@ -59,7 +59,7 @@ build-sop:
 
 build-sop-using-docker-image:
 	export container_name="build-my-sop" \
-	&& docker build -t $(image_name) . \
+	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name -t $(image_name) make build-sop \
 	; export exit_code=$$? \
 	; docker cp $$container_name:/app/sop.pdf . \
