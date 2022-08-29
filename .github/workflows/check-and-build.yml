@@ -20,7 +20,7 @@ jobs:
     concurrency:
       group: check-version
     container:
-      image: debian:stable
+      image: debian@sha256:3d2aa501c4cefd4415895b1d877dfbba0739cab1d58cbe8f1baa3f01b6739690
     runs-on: self-hosted
     steps:
       - name: Check out
