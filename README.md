@@ -6,4 +6,4 @@ Welcome! You can find the PDF version of my resume within the latest [artifacts]
 
 [workflows/main]: https://github.com/babakks/my-resume/actions/workflows/main.yml
 
-Feel free make a copy for your own use. 🍏
+Feel free to make a copy for your own use. 🍏
