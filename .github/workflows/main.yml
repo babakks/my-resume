@@ -11,12 +11,12 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Make resume (PDF)
         run: make build-resume
       - name: Make SOP (PDF)
         run: make build-sop
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: resume-and-sop-${{ github.ref_name }}-${{ github.sha }}
           path: |

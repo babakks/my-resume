@@ -13,7 +13,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Check style
         run: make check-pretty
   check-version:
@@ -24,11 +24,11 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: current
       - name: Check out main
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: main
           path: main
@@ -46,12 +46,12 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Make resume (PDF)
         run: make build-resume
       - name: Make SOP (PDF)
         run: make build-sop
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           retention-days: 5
           name: resume-and-sop-${{ github.ref_name }}-${{ github.sha }}
