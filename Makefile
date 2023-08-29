@@ -11,13 +11,8 @@ check-pretty:
 	&& latexindent -l structure.tex > structure.pretty.tex \
 	&& diff structure.tex structure.pretty.tex
 
-check-pretty-using-docker-image:
-	export container_name="check-pretty" \
-	&& docker build --rm -t $(image_name) . \
-	&& docker run --name $$container_name $(image_name) make check-pretty \
-	; export exit_code="$$?" \
-	; docker rm $$container_name \
-	&& exit $$exit_code
+check-pretty-docker:
+	$(call run_in_docker,make check-pretty)
 
 pretty:
 	latexindent -l resume.tex -w \
@@ -25,17 +20,8 @@ pretty:
 	&& latexindent -l title.tex -w \
 	&& latexindent -l structure.tex -w
 
-pretty-using-docker-image:
-	export container_name="prettify-my-resume" \
-	&& docker build --rm -t $(image_name) . \
-	&& docker run --name $$container_name -t $(image_name) make pretty \
-	; export exit_code="$$?" \
-	; docker cp $$container_name:/app/resume.tex . \
-	&& docker cp $$container_name:/app/sop.tex . \
-	&& docker cp $$container_name:/app/title.tex . \
-	&& docker cp $$container_name:/app/structure.tex . \
-	; docker rm $$container_name \
-	&& exit $$exit_code
+pretty-docker:
+	$(call run_in_docker,make pretty)
 
 clean:
 	rm -f *.bak* *.aux *.log *.out *.ent *.fls *.fdb_latexmk *.synctex.gz *.pretty.tex
@@ -44,26 +30,22 @@ build-resume:
 	lualatex -interaction=nonstopmode resume.tex \
 	&& lualatex -interaction=nonstopmode resume.tex
 
-build-resume-using-docker-image:
-	export container_name="build-my-resume" \
-	&& docker build --rm -t $(image_name) . \
-	&& docker run --name $$container_name -t $(image_name) make build-resume \
-	; export exit_code=$$? \
-	; docker cp $$container_name:/app/resume.pdf . \
-	; docker rm $$container_name \
-	&& exit $$exit_code
+build-resume-docker:
+	$(call run_in_docker,make build-resume)
 
 build-sop:
 	lualatex -interaction=nonstopmode sop.tex \
 	&& lualatex -interaction=nonstopmode sop.tex
 
-build-sop-using-docker-image:
-	export container_name="build-my-sop" \
-	&& docker build --rm -t $(image_name) . \
-	&& docker run --name $$container_name -t $(image_name) make build-sop \
-	; export exit_code=$$? \
-	; docker cp $$container_name:/app/sop.pdf . \
-	; docker rm $$container_name \
-	&& exit $$exit_code
+build-sop-docker:
+	$(call run_in_docker,make build-sop)
 
-image_name = $(shell echo "babakks/my-resume:$$(head -n 1 version.dat | sed -e 's/ /_/g' -e 's/(\|)//g')")
+define run_in_docker
+	docker run \
+		--rm \
+		-v '.:/app' \
+		$(texlive_image) \
+		bash -c 'cd /app && $(1)'
+endef
+
+texlive_image = 'texlive/texlive@sha256:4e514fb5596a8db3defd38f40fc0f7b119eb3fcc88a4bfe291cd36eb00551ddb'
