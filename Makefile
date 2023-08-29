@@ -1,8 +1,15 @@
 bump-build-no:
 	echo -n "$$(( 1+$$(cut -f1 -d" " version.dat || echo "-1") )) ($$(date -u +%y-%m-%d))" > version.dat
 
-tag:
-	git tag --annotate "v$$(cat version.dat | cut -f1 -d' ')" -m "$$(cat version.dat)"
+release:
+	git tag --annotate "$(call get_tag_name)" -m "$$(cat version.dat)" \
+	&& git push --tags \
+	&& gh release create \
+		--draft \
+		-F version.dat \
+		--title "$(call get_tag_name)" \
+		"$(call get_tag_name)" \
+		resume.pdf sop.pdf
 
 check-pretty:
 	latexindent -l resume.tex > resume.pretty.tex \
@@ -29,6 +36,10 @@ pretty-docker:
 clean:
 	rm -f *.bak* *.aux *.log *.out *.ent *.fls *.fdb_latexmk *.synctex.gz *.pretty.tex
 
+build: build-resume build-sop
+
+build-docker: build-resume-docker build-sop-docker
+
 build-resume:
 	lualatex -interaction=nonstopmode resume.tex \
 	&& lualatex -interaction=nonstopmode resume.tex
@@ -50,5 +61,7 @@ define run_in_docker
 		$(texlive_image) \
 		bash -c 'cd /app && $(1)'
 endef
+
+get_tag_name = $$(echo v$$(cat version.dat | cut -f1 -d' '))
 
 texlive_image = 'texlive/texlive@sha256:4e514fb5596a8db3defd38f40fc0f7b119eb3fcc88a4bfe291cd36eb00551ddb'
