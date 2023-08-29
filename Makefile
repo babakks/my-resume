@@ -5,7 +5,6 @@ release:
 	git tag --annotate "$(call get_tag_name)" -m "$$(cat version.dat)" \
 	&& git push --tags \
 	&& gh release create \
-		--draft \
 		-F version.dat \
 		--title "$(call get_tag_name)" \
 		"$(call get_tag_name)" \
