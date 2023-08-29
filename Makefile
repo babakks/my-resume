@@ -11,7 +11,7 @@ check-pretty:
 	&& latexindent -l structure.tex > structure.pretty.tex \
 	&& diff structure.tex structure.pretty.tex
 
-check-pretty-using-docker-image:
+docker-check-pretty:
 	export container_name="check-pretty" \
 	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name $(image_name) make check-pretty \
@@ -25,7 +25,7 @@ pretty:
 	&& latexindent -l title.tex -w \
 	&& latexindent -l structure.tex -w
 
-pretty-using-docker-image:
+docker-pretty:
 	export container_name="prettify-my-resume" \
 	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name -t $(image_name) make pretty \
@@ -44,7 +44,7 @@ build-resume:
 	lualatex -interaction=nonstopmode resume.tex \
 	&& lualatex -interaction=nonstopmode resume.tex
 
-build-resume-using-docker-image:
+docker-build-resume:
 	export container_name="build-my-resume" \
 	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name -t $(image_name) make build-resume \
@@ -57,7 +57,7 @@ build-sop:
 	lualatex -interaction=nonstopmode sop.tex \
 	&& lualatex -interaction=nonstopmode sop.tex
 
-build-sop-using-docker-image:
+docker-build-sop:
 	export container_name="build-my-sop" \
 	&& docker build --rm -t $(image_name) . \
 	&& docker run --name $$container_name -t $(image_name) make build-sop \
