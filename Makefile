@@ -2,6 +2,11 @@ bump-build-no:
 	echo -n "$$(( 1+$$(cut -f1 -d" " version.dat || echo "-1") )) ($$(date -u +%y-%m-%d))" > version.dat
 
 release:
+	@if [ ! -f resume.pdf ] || [ ! -f sop.pdf ]; then \
+		echo "Either or both of 'resume.pdf' or 'sop.pdf' not found."; \
+		echo "Build them using 'make build' or 'make build-docker', and then try again."; \
+		exit 1; \
+	fi
 	git tag --annotate "$(call get_tag_name)" -m "$$(cat version.dat)" \
 	&& git push --tags \
 	&& gh release create \
