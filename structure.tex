@@ -79,7 +79,9 @@
 \newlength{\doubleparindent} % A double \parindent...
 \addtolength{\doubleparindent}{\parindent}
 
-\newcommand{\companytitle}[2]{\textscale{1.1}{#1}\xrfill[.5ex]{.4pt}[lightgray]{#2}}
+\renewcommand\labelitemiv{$+$}
+
+\newcommand{\companytitle}[2]{\textscale{1.1}{\textbf{#1}}\xrfill[.5ex]{.4pt}[lightgray]{#2}}
 \newcommand{\jobtitle}[2]{\textbf{#1}\hfill\emph{#2}}
 \newcommand{\stackoftech}[1]{\emph{#1}}
 \newcommand{\timeinterval}[2]{\textit{#1} -- \textit{#2}}
