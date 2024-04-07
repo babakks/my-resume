@@ -13,7 +13,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Check style
         run: make check-pretty
   check-version:
@@ -24,11 +24,11 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: current
       - name: Check out main
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
           path: main
@@ -46,7 +46,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Make resume (PDF)
         run: make build-resume
       - name: Make SOP (PDF)
