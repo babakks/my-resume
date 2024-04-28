@@ -37,6 +37,8 @@
 
 \usepackage{xcolor} % Required for specifying custom colors
 
+\usepackage{tcolorbox} % Used for more customizable color boxes (e.g., round corners)
+
 \usepackage[hidelinks]{hyperref} % Required for customizing links
 
 \usepackage{tgpagella} % Use the TeX Gyre Pagella font throughout the document
@@ -85,6 +87,16 @@
 \newcommand{\jobtitle}[2]{\textbf{#1}\hfill\emph{#2}}
 \newcommand{\stackoftech}[1]{\emph{#1}}
 \newcommand{\timeinterval}[2]{\textit{#1} -- \textit{#2}}
+
+% This box definition is taken from the `tcolorbox` docs at:
+%   https://eu.mirrors.cicku.me/ctan/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+\newtcbox{\repobox}[1][gray]{on line,
+    arc=3pt,colback=#1!10!white,colframe=#1!90!black, coltext=#1,
+    before upper={\rule[-3pt]{0pt}{10pt}},boxrule=0.5pt,
+    boxsep=0pt,left=3pt,right=3pt,top=0pt,bottom=0pt
+}
+\newcommand{\repo}[1]{\textscale{0.85}{\hspace{2pt}\repobox[gray]{\texttt{#1}}}}
+\newcommand{\repowithlink}[2]{\href{#1}{\repo{#2}}}
 
 \newcommand{\githubmark}{\raisebox{-0.15em}{\includegraphics[height=1em]{img/github-mark.eps}}}
 \newcommand{\skypeicon}{\raisebox{-0.2em}{\includegraphics[height=1em]{img/skype-icon.eps}}}
