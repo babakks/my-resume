@@ -51,7 +51,7 @@ jobs:
         run: make build-resume
       - name: Make SOP (PDF)
         run: make build-sop
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           retention-days: 5
           name: resume-and-sop-${{ github.ref_name }}-${{ github.sha }}
