@@ -10,7 +10,7 @@ jobs:
       group: check-style
     container:
       image: texlive/texlive@sha256:4e514fb5596a8db3defd38f40fc0f7b119eb3fcc88a4bfe291cd36eb00551ddb
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
       group: check-version
     container:
       image: debian@sha256:3d2aa501c4cefd4415895b1d877dfbba0739cab1d58cbe8f1baa3f01b6739690
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
       - check-version
     container:
       image: texlive/texlive@sha256:4e514fb5596a8db3defd38f40fc0f7b119eb3fcc88a4bfe291cd36eb00551ddb
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out
         uses: actions/checkout@v4
